@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-center">Mr. Chat</h1>
+  <div class="stash"></div>
+
+  <div class="chatbox jumbotron">
+    <ul id="messageList">
+      {{#each}}
+      <!--<li>{{username}} -> {{message}}</li>-->
+      {{/each}}
+    </ul>
+  </div>
+
+  <form {{action "sendMessage" on="submit"}} class="form-inline" role="form">
+    <div class="form-group pull-left" style="width:18%; margin-right:2%;">
+      <label class="sr-only" for="username">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Username">
+      <!--{{input value=username type="text" class="form-control" id="username" placeholder="Username"}}-->
+    </div>
+    <div class="form-group pull-left" style="width:80%;">
+      <div class="input-group">
+        <input type="text" class="form-control" id="message" placeholder="Message">
+        <!--{{input value=message id="message" name="message" type="text" class="form-control" placeholder="Message"}}-->
+        <span class="input-group-btn">
+          <button class="btn btn-success" type="submit">Send</button>
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+
